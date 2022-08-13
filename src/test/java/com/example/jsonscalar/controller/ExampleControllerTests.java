@@ -1,6 +1,7 @@
 package com.example.jsonscalar.controller;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +17,11 @@ public class ExampleControllerTests {
 
     @Test
     void shouldCreateExample() {
-        var data = new HashMap<String, Object>();
+        var data = Map.of("foo", (Object) "bar");
 
-        data.put("foo", "bar");
-
-        var input = new HashMap<String, Object>();
-
-        input.put("name", "test");
-        input.put("data", data);
+        var input = Map.of(
+                "name", "test",
+                "data", data);
 
         graphQlTester.documentName("create-example")
                 .variable("input", input)
