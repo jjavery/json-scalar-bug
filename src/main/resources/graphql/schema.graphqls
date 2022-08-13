@@ -1,0 +1,45 @@
+scalar JSON
+
+type Query {
+  examples: [Example!]
+  example(id: ID!): Example
+}
+
+type Mutation {
+  createExample(input: CreateExampleInput!): CreateExamplePayload
+  updateExample(input: UpdateExampleInput!): UpdateExamplePayload
+  deleteExample(input: DeleteExampleInput!): DeleteExamplePayload
+}
+
+type Example {
+  id: ID!
+  name: String!
+  data: JSON
+}
+
+input CreateExampleInput {
+  name: String!
+  data: JSON
+}
+
+type CreateExamplePayload {
+  example: Example
+}
+
+input UpdateExampleInput {
+  id: ID!
+  name: String
+  data: JSON
+}
+
+type UpdateExamplePayload {
+  example: Example
+}
+
+input DeleteExampleInput {
+  id: ID!
+}
+
+type DeleteExamplePayload {
+  deleted: Boolean
+}

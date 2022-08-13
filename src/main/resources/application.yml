@@ -1,0 +1,9 @@
+server:
+  port: 2414
+
+spring:
+  graphql:
+    schema.printer.enabled: true
+    graphiql:
+      enabled: true
+      path: /graphiql

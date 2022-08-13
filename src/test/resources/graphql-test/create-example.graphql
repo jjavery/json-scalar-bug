@@ -1,0 +1,9 @@
+mutation CreateExample($input: CreateExampleInput!) {
+  createExample(input: $input) {
+    example {
+      id
+      name
+      data
+    }
+  }
+}
